@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login | Learn With AI</title>
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    backdrop-filter: blur(12px);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background: #16a34a;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Learn With AI – Login</h2>
+
+    <input type="text" id="name" placeholder="Enter your name" required>
+    <input type="text" id="college" placeholder="Enter college name" required>
+    <input type="text" id="branch" placeholder="Enter branch" required>
+    <input type="email" id="email" placeholder="Enter email" required>
+
+    <button onclick="saveDetails()">Continue</button>
+</div>
+
+<script>
+function saveDetails() {
+    const name = document.getElementById("name").value;
+    const college = document.getElementById("college").value;
+    const branch = document.getElementById("branch").value;
+    const email = document.getElementById("email").value;
+
+    if (!name || !college || !branch || !email) {
+        alert("Please fill all details!");
+        return;
+    }
+
+    localStorage.setItem("studentName", name);
+    localStorage.setItem("studentCollege", college);
+    localStorage.setItem("studentBranch", branch);
+    localStorage.setItem("studentEmail", email);
+
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
